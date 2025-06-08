@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Believerss</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .navbar {
+            padding: 1rem 1.5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .haemburger {
+            display: none;
+        }
+
+        ul>li {
+            list-style: none;
+        }
+
+        .navtext {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.18px;
+            color: #000000;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .logo {
+            width: 11rem;
+            height: 1.8rem;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .category {
+            width: 9rem;
+            height: 1.3rem;
+            border: none;
+        }
+
+        .btn-1 {
+            width: 13rem;
+            height: 2.8rem;
+            border: 1px solid black;
+            padding: 10px;
+            background: #ffffff;
+
+        }
+
+        .btn-1:hover {
+            background-color: #000000;
+            color: #ffffff;
+            transition: all 300ms ease-in-out;
+        }
+
+        .btn-2 {
+            width: 13rem;
+            height: 2.8rem;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            background: #000000;
+        }
+
+        .btn-2:hover {
+            border: 1px solid black;
+            padding: 10px;
+            background: #ffffff;
+            color: black;
+            transition: all 300ms ease-in-out;
+        }
+
+        .hero-section {
+            padding: 1rem 1.5rem;
+            height: 30rem;
+            /* margin-top: 4rem; */
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            /* border: 1px solid black; */
+        }
+
+        .img-mobile {
+            display: none;
+        }
+
+        .about-img {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .about-img img {
+            width: 73rem;
+            height: 34rem;
+        }
+
+        .our-capabilities {
+            height: 180rem;
+            width: 100%;
+            background-color: #000000;
+            padding: 3rem 0rem 3rem 8rem;
+            margin-top: 100px;
+        }
+
+
+        .our-capabilities h1 {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-size: 2.3rem;
+            font-weight: 700;
+            font-style: normal;
+            color: #ffffff;
+            line-height: 3.25rem;
+            letter-spacing: -0.84px;
+        }
+
+        .our-capabilities p {
+            color: #808080;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0;
+        }
+
+        .top {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main {
+            width: 36rem;
+            height: 7rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .Capabilities-btn-container {
+            width: 42rem;
+            height: 5rem;
+            margin: 60px auto;
+            border: 1px solid #dc1010;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 3.7rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .typo {
+            font-family: "Inter", sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            letter-spacing: -.24px;
+            color: #ffffff;
+        }
+
+        .Capabilities-btn {
+            width: 13rem;
+            height: 3.5rem;
+            padding: .5rem 1rem;
+            border-radius: 2.3rem;
+            border: 1px solid #4f4e4e;
+            background: #000000;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #0ee40e;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+
+        }
+
+        .hidden {
+            background-color: #323131;
+        }
+
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            border: 2px solid green;
+            /* padding-top: 60px; */
+
+        }
+
+        .Strategy-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding-top: 60px;
+            border: 2px solid yellow;
+
+        }
+
+        .Strategy-header {
+            width: 42rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .Strategy-points {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .design-section {
+            display: flex;
+            width: 65rem;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            gap: 21px;
+        }
+
+        .skills {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 2rem;
+            letter-spacing: 5px;
+            color: #ffffff;
+
+        }
+
+        .skill-container {
+            display: flex;
+            width: 15rem;
+            /* border: 1px solid red; */
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+
+        .about-img-2 {
+            height: 27rem;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .footer-container {
+            height: 21rem;
+            padding-left: 8rem;
+            padding-right: 2rem;
+            background-color: #ffffff;
+            margin-top: 6.25rem;
+            display: flex;
+            flex-flow: column;
+            gap: 5rem;
+        }
+
+        .footer-container p {
+            color: #4E4E4E;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+
+        .footer-container h2 {
+            color: #000000;
+        }
+
+        .footer-content-conatiner {
+            display: flex;
+            gap: 13rem;
+        }
+
+        .footer-content-subconatiner {
+            display: flex;
+            gap: 6rem;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .dropdown-button {
+            background: transparent;
+            color: #000000;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            z-index: 1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .sidebar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: black;
+            color: white;
+            padding: 20px;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .mobile-menu .close-btn {
+            font-size: 24px;
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .capabilities-dropdown {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .capabilities-toggle {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .capabilities-list {
+            display: none;
+            background: #111;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .capabilities-list a {
+            display: block;
+            padding: 8px 0;
+            font-size: 16px;
+        }
+
+        .cta-btn {
+            margin-top: auto;
+            background: white;
+            color: black;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        @media (max-width:600px) {
+
+            /* *{
+                background-color: #0ee40e;
+            } */
+            .logo {
+                width: 12.5rem;
+                height: 2rem;
+            }
+
+            .haemburger {
+                display: block;
+            }
+
+            .nav-right {
+                display: none;
+            }
+
+
+
+            .hero-section {
+                height: 25rem;
+                /* width: 8rem; */
+                /* border: 1px solid red; */
+            }
+
+            .about-section {
+                padding: 0rem 1rem;
+            }
+
+            .img-mobile {
+                display: block;
+            }
+
+            .img-desktop {
+                display: none;
+            }
+
+            .btn-2 {
+                width: 100%;
+            }
+
+            .about-img img {
+                width: 24rem;
+                height: 30rem 480px;
+            }
+
+
+            .our-capabilities {
+                padding: 1rem;
+                margin-top: 100px;
+                height: 210rem;
+                width: 25rem;
+            }
+
+            .Strategy-header {
+                width: 100%;
+            }
+
+            .top {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 8rem;
+            }
+
+            .main {
+                width: 100%;
+                height: 8rem;
+                border: 2px solid green;
+            }
+
+
+
+            .our-capabilities h1 {
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-size: 1.5rem;
+                font-weight: 700;
+                font-style: normal;
+                color: #ffffff;
+                line-height: 3.25rem;
+                letter-spacing: -0.84px;
+            }
+
+            .our-capabilities p {
+                font-size: 1rem;
+            }
+
+            .Capabilities-btn-container {
+                width: 24rem;
+                height: 3.5rem;
+            }
+
+            .Capabilities-btn {
+                width: 7rem;
+                height: 2.5rem;
+                padding: .5rem;
+            }
+
+            .typo {
+                font-family: "Inter", sans-serif;
+                font-size: 1rem;
+            }
+
+
+
+            .design-section {
+                display: flex;
+                width: 35rem;
+                flex-wrap: wrap;
+                /* justify-content: space-between; */
+                gap: 21px;
+            }
+
+            .services-container {
+                gap: 4rem;
+                width: 100%;
+            }
+
+            .skill-container {
+                display: flex;
+                width: 11.5rem;
+                /* border: 1px solid red; */
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-content-conatiner {
+                display: flex;
+                flex-direction: column;
+                gap: 5rem;
+            }
+
+            .footer-content-subconatiner {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                align-items: center;
+                text-align: center;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div>
+            <img class="logo" src="./assets/Believerss-Final 1.png" alt="">
+        </div>
+        <div class="nav-right">
+            <ul class="navlinks">
+                <li class="navtext">About us</li>
+                <div class="dropdown navtext">
+                    <button onclick="toggleDropdown()" class="dropdown-button">
+                        Our Capabilities ▼
+                    </button>
+                    <div id="dropdownMenu" class="dropdown-menu">
+                        <a href="#strategy">Strategy</a>
+                        <a href="#design">Design</a>
+                        <a href="#engineering">Engineering</a>
+                    </div>
+                </div>
+
+            </ul>
+            <button class="btn-1 navtext">Let's start the project</button>
+        </div>
+        <div class="haemburger" onclick="toggleMenu()">
+            <img src="./assets/Menu (1).png" alt="">
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="mobile-menu navtext">
+        <div class="sidebar-top">
+            <img class="logo" src="./assets/Believerss-Final 1 (1).png" alt="">
+            <div class="close-btn" onclick="toggleMenu()">✕</div>
+        </div>
+
+        <a href="#about">About us</a>
+
+        <div class="capabilities-dropdown">
+            <div class="capabilities-toggle" onclick="toggleCapabilities()">Our Capabilities ▼</div>
+            <div id="capabilitiesList" class="capabilities-list">
+                <a href="#strategy" onclick="toggleMenu()">Strategy</a>
+                <a href="#design" onclick="toggleMenu()">Design</a>
+                <a href="#engineering" onclick="toggleMenu()">Engineering</a>
+            </div>
+        </div>
+
+        <button class="cta-btn">Let’s start the project</button>
+    </div>
+
+    <div class="hero-section">
+        <div>
+            <img class="img-desktop" src="./assets/Frame 9.png" alt="" srcset="">
+            <img class="img-mobile" src="./assets/Frame 9 (1).png" alt="" srcset="">
+        </div>
+        <div>
+            <button class="btn-2 navtext">Let's start the project</button>
+        </div>
+
+    </div>
+
+    <div class="about-section">
+        <div class="about-img">
+            <img class="img-desktop" src="./assets/About_us.png" alt="" srcset="">
+            <img class="img-mobile" src="./assets/About us (3).png" alt="" srcset="">
+        </div>
+    </div>
+
+    <div class="our-capabilities">
+        <div class="top">
+            <div class="main">
+                <h1>Our Capabilities</h1>
+                <p>That helps organizations elevate their brand identity and transform customer experiences through
+                    intelligent, user-centric solutions.</p>
+            </div>
+        </div>
+
+        <div class="Capabilities-btn-container">
+            <a href="#strategy">
+                <button class="Capabilities-btn typo">
+                    <span class="dot hidden"></span>
+                    Strategy
+
+                </button>
+            </a>
+
+            <a href="#design">
+                <button class="Capabilities-btn typo">
+                    <span class="dot hidden"></span>
+                    Design</button>
+            </a>
+            <a href="#engineering">
+                <button class="Capabilities-btn typo">
+                    <span class="dot hidden"></span>
+                    Engineering
+                </button>
+            </a>
+
+
+        </div>
+        <div class="services-container">
+            <div class="Strategy-container" id="strategy">
+                <div class="Strategy-header">
+                    <h2 class="typo">Strategy</h2>
+                    <p>When business needs direction that works. We help uncover growth opportunities, solve messaging
+                        misalignments, and deliver clear plans for scaling your brand and products effectively</p>
+                </div>
+                <div class="Strategy-points">
+                    <p>Product Discovery</p>
+                    <p>Product Stratgy</p>
+                    <p>On-ground Stratgy</p>
+                    <p>Experience Strategy</p>
+                    <p>Product Roadmapping</p>
+                    <p>Technical & operational Feasibility</p>
+
+                </div>
+            </div>
+
+            <div class="Strategy-container" id="design">
+                <div class="Strategy-header">
+                    <h2 class="typo">User Experience</h2>
+                    <p>We manage end-to-end user experience — from research and strategy to design and delivery. Our
+                        AI-enhanced process ensures seamless, user-centric digital journeys at every touchpoint.</p>
+                </div>
+                <div class="design-section">
+                    <div class="skill-container">
+                        <h2 class="skills">UX REASEARCH</h2>
+                        <div class="Strategy-points">
+                            <p>User Research</p>
+                            <p>Business Research</p>
+                            <p>Design Research</p>
+                            <p>Product Research</p>
+                            <p>Accessibility Research</p>
+                            <p>Behavioural Research</p>
+                            <p>Techniqal Research</p>
+                            <p>Post-Lauch Research</p>
+                        </div>
+
+                    </div>
+
+                    <div class="skill-container">
+                        <h2 class="skills">UX Design</h2>
+                        <div class="Strategy-points">
+                            <p>User Journey Mapping</p>
+                            <p>Sitemaps and Wireframes</p>
+                            <p>Interactions and Actions</p>
+                            <p>Prototyping</p>
+                            <p>Service Design</p>
+                            <p>Experience Strategy</p>
+                            <p>System Design</p>
+                        </div>
+
+                    </div>
+
+                    <div class="skill-container">
+                        <h2 class="skills">IA</h2>
+                        <div class="Strategy-points">
+                            <p>Hierarchical IA </p>
+                            <p>Sequential IA</p>
+                            <p>Matrix IA</p>
+                            <p>Flat IA</p>
+                            <p>Topic IA</p>
+                        </div>
+
+                    </div>
+
+                    <div class="skill-container">
+                        <h2 class="skills">UX Writting</h2>
+                        <div class="Strategy-points">
+                            <p>Whole App Writting</p>
+                            <p>Error Messaging</p>
+                            <p>CTA Writting</p>
+                            <p>Help and Support in Content Writting</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="skill-container">
+                        <h2 class="skills">Usability Testing</h2>
+
+                        <div class="Strategy-points">
+                            <p>Moderate Usability</p>
+                            <p>Unmoderated Usability</p>
+                            <p>Remote Usability</p>
+                            <p>In-Person Usability</p>
+                            <p>Explorative Usability</p>
+                            <p>Behavioural Research</p>
+                            <p>Techniqal Research</p>
+                            <p>Post-Lauch Research</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="Strategy-container" id="design">
+                <div class="Strategy-header">
+                    <h2 class="typo">User Interface</h2>
+                    <p>We craft end-to-end user interfaces that are intuitive, accessible, and visually engaging.
+                        Leveraging AI-powered design systems, we deliver scalable and consistent UI across digital
+                        products.
+                    </p>
+                </div>
+                <div class="Strategy-points">
+                    <p>Product Discovery</p>
+                    <p>Product Stratgy</p>
+                    <p>On-ground Stratgy</p>
+                    <p>Experience Strategy</p>
+                    <p>Product Roadmapping</p>
+                    <p>Technical & operational Feasibility</p>
+
+                </div>
+            </div>
+
+            <div class="Strategy-container" id="engineering">
+                <div class="Strategy-header">
+                    <h2 class="typo">Engineering</h2>
+                    <p>Our engineering team brings digital products to life with scalable, high-performance code. From
+                        front-end interactions to robust back-end systems, we ensure seamless, AI-optimized delivery.
+                    </p>
+                </div>
+                <div class="design-section">
+                    <div class="skill-container">
+                        <h2 class="skills">Front end</h2>
+                        <div class="Strategy-points">
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>Javascript</p>
+                            <p>Tailwind CSS</p>
+                            <p>React.js</p>
+                            <p>Next.js</p>
+                            <p>Wordpress</p>
+                        </div>
+
+                    </div>
+
+                    <div class="skill-container">
+                        <h2 class="skills">Back end</h2>
+                        <div class="Strategy-points">
+                            <p>User Node JS</p>
+                            <p>Express JS</p>
+                            <p>Interactions and Actions</p>
+                            <p>Mongo DB</p>
+                            <p>SQL</p>
+                            <p>Experience Strategy</p>
+                            <p>System Design</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="about-section">
+        <div class="about-img-2">
+            <img class="img-desktop" src="./assets/About us (2).png" alt="" srcset="">
+            <img class="img-mobile" src="./assets/About us (4).png" alt="" srcset="">
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-content-conatiner">
+            <div>
+                <img class="logo" src="./assets/Believerss-Final 1.png" alt="" srcset="">
+                <p class="">Let’s help The Human’s</p>
+            </div>
+            <div class="footer-content-subconatiner">
+                <div>
+                    <h2 class="typo">We Believerss</h2>
+                    <p>About us</p>
+                </div>
+                <div>
+                    <h2 class="typo">Capabilities</h2>
+                    <a href="#strategy">
+                        <p>Strategy</p>
+                    </a>
+                    <a href="#design">
+                        <p>User Experience</p>
+                    </a>
+                    <a href="#design">
+                        <p>User Interface</p>
+                    </a>
+                    <a href="#engineering">
+                        <p>Front-End Development</p>
+                    </a>
+
+                    <a href="#engineering">
+                        <p>Back-End Development</p>
+                    </a>
+                </div>
+                <div>
+                    <h2 class="typo">Social Media</h2>
+                    <p>Instagram</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>All rights reserved Believerss Studio 2025</p>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.Capabilities-btn');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.dot').forEach(dot => {
+                    dot.classList.add('hidden');
+                });
+                const dot = button.querySelector('.dot');
+                dot.classList.remove('hidden');
+            });
+        });
+
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        window.onclick = function (event) {
+            if (!event.target.closest('.dropdown')) {
+                const dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].classList.remove("show");
+                }
+            }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function toggleCapabilities() {
+            const list = document.getElementById('capabilitiesList');
+            list.style.display = list.style.display === 'block' ? 'none' : 'block';
+        }
+
+
+    </script>
+
+</body>
+
+</html>
